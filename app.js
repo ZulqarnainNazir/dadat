@@ -22,10 +22,12 @@ app.use(logger("dev"));
 
 //db connection
 // const dbPath = "mongodb://localhost/socketChatDB";
-const dbPath = `mongodb://github_demo:Pass\#12@ds149511.mlab.com:49511/socketionodejschat`;
-mongoose.connect(dbPath, { useNewUrlParser: true });
-mongoose.connection.once("open", function() {
-  console.log("Database Connection Established Successfully.");
+mongoose.connect('mongodb://admin:Admin1234@ds135983.mlab.com:35983/chat-box', function(err){
+  if(err){
+    console.log(err);
+  } else{
+    console.log('Connected to mongodb');
+  }
 });
 
 //http method override middleware
